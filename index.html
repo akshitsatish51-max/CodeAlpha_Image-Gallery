@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Image Gallery</h1>
+    </header>
+
+    <section class="upload-section">
+        <label for="image-upload" class="add-button">＋ Add Photos</label>
+        <input type="file" id="image-upload" accept="image/*" multiple>
+        <p>Choose one or more photos from your device.</p>
+    </section>
+
+    <main class="gallery-container">
+        <div class="empty-message" id="empty-message">
+            <div class="empty-icon">🖼️</div>
+            <h2>Your gallery is empty</h2>
+            <p>Click <strong>＋ Add Photos</strong> to upload your first photo.</p>
+        </div>
+
+        <div class="gallery" id="gallery"></div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <button class="close" onclick="closeLightbox()">x</button>
+        <button class="prev" onclick="changeImage(-1)"><</button>
+        <img id="lightbox-image" src="" alt="Selected image">
+        <button class="next" onclick="changeImage(1)">></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

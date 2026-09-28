@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+}
+
+.header {
+    text-align: center;
+    background: #3498db;
+    color: white;
+    padding: 35px 20px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 17px;
+}
+
+.upload-section {
+    text-align: center;
+    padding: 28px 15px 5px;
+}
+
+.add-button {
+    display: inline-block;
+    background: #2ecc71;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.add-button:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+#image-upload {
+    display: none;
+}
+
+.upload-section p {
+    margin-top: 12px;
+    color: #666;
+    font-size: 14px;
+}
+
+.gallery-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto 40px;
+    min-height: 300px;
+}
+
+.empty-message {
+    text-align: center;
+    background: white;
+    border: 2px dashed #bdc3c7;
+    border-radius: 12px;
+    padding: 55px 20px;
+    max-width: 600px;
+    margin: 35px auto;
+}
+
+.empty-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.empty-message h2 {
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.empty-message p {
+    color: #777;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    background: white;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 230px;
+    display: block;
+    object-fit: cover;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.04);
+    opacity: 0.92;
+}
+
+.delete-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 11px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.delete-button:hover {
+    background: #c0392b;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    max-width: 75%;
+    max-height: 80%;
+    border: 5px solid white;
+    border-radius: 8px;
+}
+
+.close, .prev, .next {
+    position: absolute;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.close {
+    top: 20px;
+    right: 35px;
+}
+
+.prev {
+    left: 25px;
+}
+
+.next {
+    right: 25px;
+}
+
+.close:hover, .prev:hover, .next:hover {
+    color: #3498db;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+    margin-top: 30px;
+}
+
+@media (max-width: 800px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .gallery-item img {
+        height: 220px;
+    }
+
+    .lightbox img {
+        max-width: 85%;
+    }
+}
